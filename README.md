@@ -1,5 +1,11 @@
 # Spin v4 issues reproduction repo
 
+Issues demonstrated with this repo:
+
+1. Spin v4 does not route *.spin.internal HTTP requests
+2. `spin new -E akamai-functions` breaks `spin build`
+3. Akamai Functions fails to deploy applications with two components
+
 ## 1. Spin v4 does not route *.spin.internal HTTP requests
 
 ```bash
