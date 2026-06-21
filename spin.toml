@@ -1,0 +1,44 @@
+#:schema https://schemas.spinframework.dev/spin/manifest-v2/latest.json
+
+spin_manifest_version = 2
+
+[application]
+name = "spin4-internal-broken"
+version = "0.1.0"
+authors = ["André Arko <andre@arko.net>"]
+description = ""
+
+[[trigger.http]]
+route = "/..."
+component = "spin4-internal-broken"
+
+[component.spin4-internal-broken]
+source = "target/wasm32-wasip2/release/spin4_internal_broken.wasm"
+allowed_outbound_hosts = []
+[component.spin4-internal-broken.build]
+command = "cargo build --target wasm32-wasip2 --release"
+watch = ["src/**/*.rs", "Cargo.toml"]
+
+[[trigger.http]]
+route = "/..."
+component = "one"
+
+[component.one]
+source = "one/target/wasm32-wasip2/release/one.wasm"
+allowed_outbound_hosts = []
+[component.one.build]
+command = "cargo build --target wasm32-wasip2 --release"
+workdir = "one"
+watch = ["src/**/*.rs", "Cargo.toml"]
+
+[[trigger.http]]
+route = "/..."
+component = "two"
+
+[component.two]
+source = "two/target/wasm32-wasip2/release/two.wasm"
+allowed_outbound_hosts = []
+[component.two.build]
+command = "cargo build --target wasm32-wasip2 --release"
+workdir = "two"
+watch = ["src/**/*.rs", "Cargo.toml"]
