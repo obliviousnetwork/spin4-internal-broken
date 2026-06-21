@@ -7,6 +7,13 @@ name = "spin4-internal-broken"
 version = "0.1.0"
 authors = ["André Arko <andre@arko.net>"]
 description = ""
+targets = ["akamai-functions"]
+# if this is set, every build fails with:
+# Error: unable to check if the application is compatible with deployment targets
+# Caused by:
+#    0: Failed to get akamai:functions@1.0.0 from registry
+#    1: registry error: Authentication failure: {"errors":[{"code":"DENIED","message":"requested access to the resource is denied"}]}
+#    2: Authentication failure: {"errors":[{"code":"DENIED","message":"requested access to the resource is denied"}]}
 
 [[trigger.http]]
 route = "/..."
