@@ -14,7 +14,7 @@ component = "spin4-internal-broken"
 
 [component.spin4-internal-broken]
 source = "target/wasm32-wasip2/release/spin4_internal_broken.wasm"
-allowed_outbound_hosts = []
+allowed_outbound_hosts = ["http://*:*"]
 [component.spin4-internal-broken.build]
 command = "cargo build --target wasm32-wasip2 --release"
 watch = ["src/**/*.rs", "Cargo.toml"]
