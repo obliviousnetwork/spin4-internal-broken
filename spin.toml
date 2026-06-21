@@ -20,7 +20,7 @@ command = "cargo build --target wasm32-wasip2 --release"
 watch = ["src/**/*.rs", "Cargo.toml"]
 
 [[trigger.http]]
-route = "/..."
+route = { private = true }
 component = "one"
 
 [component.one]
@@ -32,7 +32,7 @@ workdir = "one"
 watch = ["src/**/*.rs", "Cargo.toml"]
 
 [[trigger.http]]
-route = "/..."
+route = { private = true }
 component = "two"
 
 [component.two]
